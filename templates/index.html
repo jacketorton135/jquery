@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>晚餐選擇器</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    #result {
+      font-size: 32px;
+      margin-top: 30px;
+      color: #333;
+    }
+    #pickBtn {
+      padding: 15px 30px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>今天晚餐吃什麼？</h1>
+  <button id="pickBtn">我要吃什麼？</button>
+  <div id="result">🍽️ 點擊按鈕開始選擇！</div>
+
+  <script>
+    $(document).ready(function() {
+      var dinners = [
+        "牛肉麵",
+        "壽司",
+        "火鍋",
+        "炸雞",
+        "便當",
+        "披薩",
+        "拉麵",
+        "漢堡",
+        "燒烤",
+        "咖哩飯"
+      ];
+
+      $('#pickBtn').click(function() {
+        var choice = dinners[Math.floor(Math.random() * dinners.length)];
+        $('#result').text("晚餐建議吃：" + choice + " 🍜");
+      });
+    });
+  </script>
+
+</body>
+</html>
